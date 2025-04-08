@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tictac/config/routes/routes.dart';
 import 'package:tictac/core/utils/colors.dart';
-import 'package:tictac/views/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: bgColor,
       ),
-      home: const MainScreen(),
+      initialRoute: AppRoutes.main,
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }
