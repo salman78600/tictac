@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
   }
 
   void joinRoom(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.createRoom);
+    Navigator.pushNamed(context, AppRoutes.joinRoom);
   }
 
   @override
