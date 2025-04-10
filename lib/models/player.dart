@@ -24,7 +24,7 @@ class Player {
     return Player(
       nickname: json['nickname'] as String?,
       socketId: json['socketId'] as String?,
-      points: (json['points'] as num?)?.toDouble(),
+      points: json['points']?.toDouble() ?? 0.0,
       playerType: json['playerType'] as String?,
     );
   }

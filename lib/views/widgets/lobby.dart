@@ -4,7 +4,7 @@ import 'package:tictac/provider/room_provider.dart';
 import 'package:tictac/views/widgets/custom_textfield.dart';
 
 class WaitingLobby extends StatefulWidget {
-  const WaitingLobby({Key? key}) : super(key: key);
+  const WaitingLobby({super.key});
 
   @override
   State<WaitingLobby> createState() => _WaitingLobbyState();

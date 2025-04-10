@@ -24,6 +24,14 @@ class MainScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text("Welcome to Tic Tac Toe",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                )),
+            SizedBox(
+              height: 14,
+            ),
             CustomButton(
               onPressed: () => createRoom(context),
               text: 'Create Room',
