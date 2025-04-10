@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tictac/core/responsive/responsive.dart';
+import 'package:tictac/resources/socket_methods.dart';
 import 'package:tictac/views/widgets/custom_button_widget.dart';
 import 'package:tictac/views/widgets/custom_text.dart';
 import 'package:tictac/views/widgets/custom_textfield.dart';
@@ -13,6 +14,13 @@ class CreateRoomScreen extends StatefulWidget {
 
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.createRoomSuccessListener(context);
+  }
 
   @override
   void dispose() {
@@ -35,11 +43,16 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               height: MediaQuery.of(context).size.height * 0.04,
             ),
             CustomTextfield(
-                hintText: "Enter Your Name", controller: _nameController),
+                isReadOnly: false,
+                hintText: "Enter Your Name",
+                controller: _nameController),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
-            CustomButton(onPressed: () {}, text: "Create Room"),
+            CustomButton(
+                onPressed: () =>
+                    _socketMethods.createRoom(_nameController.text),
+                text: "Create Room"),
           ],
         ),
       ),

@@ -4,13 +4,18 @@ import 'package:tictac/core/utils/colors.dart';
 class CustomTextfield extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
+  final bool? isReadOnly;
   const CustomTextfield(
-      {super.key, required this.hintText, required this.controller});
+      {super.key,
+      required this.hintText,
+      required this.controller,
+      required this.isReadOnly});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      readOnly: isReadOnly!,
       decoration: InputDecoration(
         filled: true,
         fillColor: bgColor,
